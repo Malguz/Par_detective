@@ -1,0 +1,37 @@
+Business Rules
+The system must allow creating and editing cases.
+Each case must have a title, description, date, and status.
+Findings and evidence must be recorded.
+Each case must have a closure status.
+The case view must allow searching for cases and viewing their status. CRUD operations should be supported for each case.
+
+Entities
+Cases
+Evidence
+Findings
+Client
+Attributes
+Case
+- id
+- title
+- description
+- date
+- status
+Evidence
+- id
+- collection_date
+- description
+- location
+- importance
+Notes
+- id
+- description
+- date
+Client
+- id
+- name
+- phone
+- address
+
+
+
