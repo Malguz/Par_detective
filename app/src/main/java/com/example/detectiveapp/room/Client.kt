@@ -3,17 +3,16 @@ package com.example.detectiveapp.room
 import androidx.room3.Entity
 import androidx.room3.PrimaryKey
 
-@Entity(tableName = "cases")
-data class Case(
+@Entity(tableName = "client")
+data class Client(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
 
-    val title: String,
+    val id_case: Int,
 
-    val description: String,
+    val name: String,
 
-    val date: String,
+    val phone: String,
 
-    val status: String
+    val address: String
 )
-
