@@ -7,24 +7,24 @@ import kotlinx.coroutines.flow.Flow
 interface CaseDao {
 
     @Insert
-    suspend fun insertCase(case: cases)
+    suspend fun insertCase(case: Case)
 
     @Update
-    suspend fun updateCase(case: cases)
+    suspend fun updateCase(case: Case)
 
     @Delete
-    suspend fun deleteCase(case: cases)
+    suspend fun deleteCase(case: Case)
 
     @Query("SELECT * FROM cases ORDER BY id DESC")
-    fun getAllCases(): Flow<List<cases>>
+    fun getAllCases(): Flow<List<Case>>
 
     @Query("SELECT * FROM cases WHERE id = :id")
-    suspend fun getCaseById(id: Int): cases?
+    suspend fun getCaseById(id: Int): Case?
 
     @Query("""
         SELECT * FROM cases 
         WHERE title LIKE '%' || :query || '%'
         OR status LIKE '%' || :query || '%'
     """)
-    fun searchCases(query: String): Flow<List<cases>>
+    fun searchCases(query: String): Flow<List<Case>>
 }

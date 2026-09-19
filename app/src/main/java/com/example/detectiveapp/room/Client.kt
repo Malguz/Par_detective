@@ -8,7 +8,7 @@ import androidx.room3.PrimaryKey
     tableName = "client",
     foreignKeys = [
         ForeignKey(
-            entity = cases::class,
+            entity = Case::class,
             parentColumns = ["id"],
             childColumns = ["id_case"],
             onDelete = ForeignKey.CASCADE

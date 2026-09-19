@@ -8,7 +8,7 @@ import androidx.room3.RoomDatabase
 
 @Database(
     entities = [
-        cases::class,
+        Case::class,
         Client::class,
         Note::class,
         Evidence::class

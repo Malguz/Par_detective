@@ -4,7 +4,7 @@ import androidx.room3.Entity
 import androidx.room3.PrimaryKey
 
 @Entity(tableName = "cases")
-data class cases(
+data class Case(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
 
