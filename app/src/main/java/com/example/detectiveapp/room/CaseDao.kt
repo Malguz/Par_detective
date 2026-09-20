@@ -1,19 +1,19 @@
 package com.example.detectiveapp.room
 
-import androidx.room3.*
+import androidx.room.*
 import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface CaseDao {
 
     @Insert
-    suspend fun insertCase(case: Case)
+    suspend fun insertCase(caseItem: Case)
 
     @Update
-    suspend fun updateCase(case: Case)
+    suspend fun updateCase(caseItem: Case)
 
     @Delete
-    suspend fun deleteCase(case: Case)
+    suspend fun deleteCase(caseItem: Case)
 
     @Query("SELECT * FROM cases ORDER BY id DESC")
     fun getAllCases(): Flow<List<Case>>
