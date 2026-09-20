@@ -1,7 +1,7 @@
 package com.example.detectiveapp.room
 
 
-import androidx.room3.*
+import androidx.room.*
 import kotlinx.coroutines.flow.Flow
 
 @Dao

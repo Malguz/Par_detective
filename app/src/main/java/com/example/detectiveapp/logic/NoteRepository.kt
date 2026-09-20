@@ -5,12 +5,12 @@ import com.example.detectiveapp.room.NoteDao
 import kotlinx.coroutines.flow.Flow
 
 class NoteRepository(private val noteDao: NoteDao) {
-    fun obtenerPorCaso(caseId: Int): Flow<List<Note>> = noteDao.getNotesByCase(caseId)
+    fun getByCase(caseId: Int): Flow<List<Note>> = noteDao.getNotesByCase(caseId)
 
-    suspend fun agregar(caseId: Int, descripcion: String, fecha: String) {
-        require(descripcion.isNotBlank()) { "El hallazgo no puede estar vacío." }
-        noteDao.insertNote(Note(id_case = caseId, description = descripcion, date = fecha))
+    suspend fun add(caseId: Int, description: String, date: String) {
+        require(description.isNotBlank()) { "El hallazgo no puede estar vacío." }
+        noteDao.insertNote(Note(id_case = caseId, description = description, date = date))
     }
 
-    suspend fun eliminar(nota: Note) = noteDao.deleteNote(nota)
+    suspend fun delete(note: Note) = noteDao.deleteNote(note)
 }
